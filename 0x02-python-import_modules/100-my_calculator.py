@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
-    import calculator_1.py as calc
+    import calculator_1 as calc
     import sys
     if len(sys.argv) != 4:
         print("Usage: ./{} <a> <operator> <b>".format(sys.argv[0]))
