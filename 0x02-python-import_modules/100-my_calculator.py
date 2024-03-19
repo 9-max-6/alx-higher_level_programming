@@ -3,7 +3,7 @@ if __name__ == "__main__":
     import calculator_1 as calc
     import sys
     if len(sys.argv) != 4:
-        print("Usage: ./{} <a> <operator> <b>".format(sys.argv[0]))
+        print("Usage: {} <a> <operator> <b>".format(sys.argv[0]))
         sys.exit(1)
     if sys.argv[2] not in "+-*/":
         print("Unknown operator. Available operators: +, -, * and /")
