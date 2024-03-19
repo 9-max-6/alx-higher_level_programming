@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
-    import hidden_4.pyc
+    import hidden_4
     name_def = dir(hidden_4)
     for name in sorted(name_def):
         if name[:2] != "__":
