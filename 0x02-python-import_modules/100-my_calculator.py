@@ -11,9 +11,9 @@ if __name__ == "__main__":
     elif (sys.argv[2]) == "+":
         print("{} + {} = {}".format(sys.argv[1], sys.argv[3], calc.add(int(sys.argv[1]), int(sys.argv[3]))))
     elif (sys.argv[2]) == "-":
-        print("{} * {} = {}".format(sys.argv[1], sys.argv[3], calc.sub(int(sys.argv[1]), int(sys.argv[3]))))
+        print("{} - {} = {}".format(sys.argv[1], sys.argv[3], calc.sub(int(sys.argv[1]), int(sys.argv[3]))))
     elif (sys.argv[2]) == "*":
         print("{} * {} = {}".format(sys.argv[1], sys.argv[3], calc.mul(int(sys.argv[1]), int(sys.argv[3]))))
     else:
-        print("{} * {} = {}".format(sys.argv[1], sys.argv[3], calc.div(int(sys.argv[1]), int(sys.argv[3]))))
+        print("{} / {} = {}".format(sys.argv[1], sys.argv[3], calc.div(int(sys.argv[1]), int(sys.argv[3]))))
     sys.exit(0)
