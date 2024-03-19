@@ -6,7 +6,7 @@ if __name__ == "__main__":
         print("Usage: ./{} <a> <operator> <b>".format(sys.argv[0]))
         sys.exit(1)
     if sys.argv[2] not in "+-*/": 
-        print("Unknown operators. Available operators: +, -, * and /")
+        print("Unknown operator. Available operators: +, -, * and /")
         sys.exit(1)
     elif (sys.argv[2]) == "+":
         print("{} + {} = {}".format(sys.argv[1], sys.argv[3], calc.add(int(sys.argv[1]), int(sys.argv[3]))))
