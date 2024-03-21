@@ -6,7 +6,8 @@ def best_score(a_dictionary):
     a function that returns a key with the biggest integer value.
     """
 
-
+    if not a_dictionary:
+        return None
     sorted_list = []
     keys = list(a_dictionary.keys())
     for key in keys:
