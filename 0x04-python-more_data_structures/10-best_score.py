@@ -2,12 +2,16 @@
 
 
 def best_score(a_dictionary):
+    """
+    a function that returns a key with the biggest integer value.
+    """
+
+
     sorted_list = []
     keys = list(a_dictionary.keys())
     for key in keys:
         sorted_list.append(a_dictionary[key])
     sorted_list = sorted(sorted_list)
-    if sorted_list.count(sorted_list[-1]) == 1:
-        return(sorted_list[-1])
-    else:
-        return None
+    for key in keys:
+        if a_dictionary[key] == sorted_list[-1]:
+            return key
