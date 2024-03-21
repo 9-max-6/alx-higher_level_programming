@@ -9,3 +9,4 @@ def safe_print_integer(value):
         return True
     except TypeError:
         print("School is not an integer")
+        return False
