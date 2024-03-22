@@ -39,7 +39,11 @@ class Square:
         """
         A setter for the position property
         """
-        if type(value) is not tuple or min(value) < 0 or len(value) != 2:
+        if type(value) is not tuple or min(value) < 0:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if len(value) != 2 or type(self.__position[0]) is not int:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if type(self.__position[1] is not int):
             raise TypeError("position must be a tuple of 2 positive integers")
 
     @size.setter
