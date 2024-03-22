@@ -5,43 +5,64 @@ Module defining a class square
 
 
 class Square:
-    __size = None
-    __position = None
+    """
+    A class Square with one private variable __size and  a method
+    to determine its area, a setter for the size and a getter
+    """
 
     def __init__(self, size=0, position=(0, 0)):
-        if type(size) is not int:
-            raise TypeError("size must be an integer")
-        elif size <= 0:
-            raise ValueError("size must be >= 0")
-        else:
-            self.__size = size
-            self.__position = position
+        self.__size = size
+        self.__position = position
+
     def area(self):
+        """
+        Determines the area of the square
+        """
         return self.__size ** 2
+
+    @property
     def size(self):
+        """
+        A getter for the size of the square
+        """
         return self.__size
+
+    @property
+    def position(self):
+        """
+        A getter for the position property
+        """
+        return self.__position
+
+    @position.setter
+    def position(self, value):
+        """
+        A setter for the position property
+        """
+        if type(value) is not tuple or min(value) < 0 or len(value) != 2:
+            raise TypeError("position must be a tuple of 2 positive integers")
+
+    @size.setter
     def size(self, value):
+        """
+        A setter for the size value of the square
+        """
         if type(value) is not int:
             raise TypeError("size must be an integer")
-        elif value <= 0:
+        elif value < 0:
             raise ValueError("size must be >= 0")
         else:
             self.__size = value
 
     def my_print(self):
+        """
+        Print the square prefixed by #
+        """
         if self.size == 0:
             print("")
         else:
-            for i in self.__size:
-                for i in self.__size:
-                    print("#", end="")
+            [print("") for i in range(0, self.__position[1])]
+            for i in range(0, self.__size):
+                [print(" ", end="") for j in range(0, self.__position[0])]
+                [print("#", end="") for k in range(0, self.__size)]
                 print("")
-            print("")
-    def position(self):
-        return self.__position
-    def position(self, value):
-        if type(value) is not tuple or len(value) is not 2 or min(value) < 0:
-            raise TypeError("position must be a tuple of 2 positive integers")
-        else:
-            self.__position = value
-    
