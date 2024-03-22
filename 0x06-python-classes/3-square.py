@@ -5,7 +5,11 @@ Module defining a class square
 
 
 class Square:
-    __size = 3
+    """
+    A class Square with one private variable __size and  a function 
+    to determine its area
+    """
+    __size = None
 
     def __init__(self, size=0):
         if type(size) is not int:
@@ -15,5 +19,7 @@ class Square:
         else:
             self.__size = size
     def area(self):
+        """
+        A method to determie the area of the instance of the Square class"""
         return self.__size ** 2
     

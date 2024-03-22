@@ -8,7 +8,7 @@ class Square:
     """
     A class to define a square with a private variable size
     """
-    __size = 3
+    __size = None
 
     def __init__(self, size=0):
         if type(size) is not int:

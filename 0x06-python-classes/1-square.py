@@ -8,4 +8,4 @@ class Square:
     """
     A class to define a square with one private variable size
     """
-    __size = 3
+    __size = None
