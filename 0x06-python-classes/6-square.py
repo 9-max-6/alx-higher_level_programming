@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+Module defining a class square
+"""
+
 
 class Square:
     __size = None
@@ -33,3 +37,11 @@ class Square:
                     print("#", end="")
                 print("")
             print("")
+    def position(self):
+        return self.__position
+    def position(self, value):
+        if type(value) is not tuple or len(value) is not 2 or min(value) < 0:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        else:
+            self.__position = value
+    

@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+Module defining a class square
+"""
+
 
 class Square:
     __size = 3

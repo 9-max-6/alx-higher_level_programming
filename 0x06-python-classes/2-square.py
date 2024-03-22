@@ -1,6 +1,13 @@
 #!/usr/bin/python3
+"""
+Module defining a class square
+"""
+
 
 class Square:
+    """
+    A class to define a square with a private variable size
+    """
     __size = 3
 
     def __init__(self, size=0):
