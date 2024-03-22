@@ -9,8 +9,6 @@ class Square:
     A class Square with one private variable __size and  a function
     to determine its area
     """
-    __size = None
-
     def __init__(self, size=0):
         if type(size) is not int:
             raise TypeError("size must be an integer")

@@ -9,7 +9,6 @@ class Square:
     A class Square with one private variable __size and  a method
     to determine its area, a setter for the size and a getter
     """
-    __size = None
 
     def __init__(self, size=0):
         self.__size = size
