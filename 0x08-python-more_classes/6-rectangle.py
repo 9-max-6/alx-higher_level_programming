@@ -6,7 +6,7 @@ The Rectangle module
 
 class Rectangle:
     """
-    A class defining the rectangle 
+    A class defining the rectangle
     """
     number_of_instances = 0
 
@@ -14,12 +14,12 @@ class Rectangle:
         self.width = width
         self.height = height
         Rectangle.number_of_instances += 1
-    
+
     @property
     def width(self):
         """ property getter"""
         return self.__width
-    
+
     @width.setter
     def width(self, value):
         """width setter"""
@@ -29,12 +29,12 @@ class Rectangle:
             raise ValueError("width must be >= 0")
         else:
             self.__width = value
-    
+
     @property
     def height(self):
         """ property getter"""
         return self.__height
-    
+
     @height.setter
     def height(self, value):
         """height setter"""
@@ -48,14 +48,14 @@ class Rectangle:
     def area(self):
         """ method to return the area of the rectangle"""
         return self.__height * self.__width
-    
+
     def perimeter(self):
         """method to return the perimeter of the rectangle"""
         if self.__height == 0 or self.__width == 0:
             return 0
         else:
             return (self.__height + self.__width) * 2
-    
+
     def __str__(self):
         """method to print rectangle"""
         if self.__width == 0 or self.__height == 0:
@@ -67,7 +67,7 @@ class Rectangle:
                 if i != self.__height - 1:
                     rect.append("\n")
         return ("".join(rect))
-    
+
     def __repr__(self):
         """canononical rep of the rectangle object"""
         g = self.__dict__["_Rectangle__height"]
