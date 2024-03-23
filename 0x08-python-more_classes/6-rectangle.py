@@ -13,7 +13,7 @@ class Rectangle:
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
-        number_of_instances += 1
+        Rectangle.number_of_instances += 1
     
     @property
     def width(self):
@@ -70,10 +70,11 @@ class Rectangle:
     
     def __repr__(self):
         """canononical rep of the rectangle object"""
-        
-        return (f'Rectangle({self.__dict__["_Rectangle__height"]}, {self.__dict__["_Rectangle__width"]})')
-    
+        g = self.__dict__["_Rectangle__height"]
+        h = self.__dict__["_Rectangle__width"]
+        return (f'Rectangle({h}, {g})')
+
     def __del__(self):
         """A destructor the python way"""
         print("Bye rectangle...")
-        number_of_instances -= 1
+        Rectangle.number_of_instances -= 1
