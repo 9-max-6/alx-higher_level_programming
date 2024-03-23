@@ -61,7 +61,7 @@ class Rectangle:
             for i in range(self.__height):
                 for i in range(self.__width):
                     print("#", end="")
-                if i < self.__height - 1:
+                if i != self.__height - 1:
                     print("")
                 else:
                     print("", end="")
