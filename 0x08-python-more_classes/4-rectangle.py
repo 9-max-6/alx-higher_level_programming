@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-The Rectangle module
+The Rectangle module that contains details about everything
 """
 
 
