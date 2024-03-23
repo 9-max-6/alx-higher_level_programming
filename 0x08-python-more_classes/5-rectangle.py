@@ -67,8 +67,9 @@ class Rectangle:
     
     def __repr__(self):
         """canononical rep of the rectangle object"""
-        
-        return (f'Rectangle({self.__dict__["_Rectangle__height"]}, {self.__dict__["_Rectangle__width"]})')
+        g = self.__dict__["_Rectangle__height"]
+        h = self.__dict__["_Rectangle__width"]
+        return (f'Rectangle({g}, {h})')
     
     def __del__(self):
         """A destructor the python way"""
