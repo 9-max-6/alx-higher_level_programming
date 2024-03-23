@@ -99,11 +99,11 @@ class Rectangle:
         elif (not isinstance(rect_2, Rectangle)):
             raise TypeError("rect_2 must be an instance of Rectangle")
         else:
-            h = getattr(rect_1, rect_1.height, 0)
-            g = getattr(rect_1, rect_1.width, 0)
+            h = getattr(rect_1, 'rect_1.height', 0)
+            g = getattr(rect_1, 'rect_1.width', 0)
             area_1 = h * g
-            a = getattr(rect_2, rect_2.height, 0)
-            b = getattr(rect_2, rect_2.width, 0)
+            a = getattr(rect_2, 'rect_2.height', 0)
+            b = getattr(rect_2, 'rect_2.width', 0)
             area_2 = a * b
             if (area_1 == area_2 or area_1 > area_2):
                 return rect_1
