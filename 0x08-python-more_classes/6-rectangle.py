@@ -61,11 +61,12 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ("")
         else:
+            rect = []
             for i in range(self.__height):
-                for i in range(self.__width):
-                    print("#", end="")
-                print("")
-        return ("")
+                [rect.append('#') for j in range(self.__width)]
+                if i != self.__height - 1:
+                    rect.append("\n")
+        return ("".join(rect))
     
     def __repr__(self):
         """canononical rep of the rectangle object"""
