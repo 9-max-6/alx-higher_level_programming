@@ -64,17 +64,20 @@ class Rectangle:
         else:
             rect = []
             for i in range(self.__height):
-                [rect.append('#') for j in range(self.__width)]
+                [rect.append(f'{self.print_symbol}') for j in range(self.__width)]
                 if i != self.__height - 1:
                     rect.append("\n")
         return ("".join(rect))
     
     def __repr__(self):
         """canononical rep of the rectangle object"""
-        
-        return (f'Rectangle({self.__dict__["_Rectangle__height"]}, {self.__dict__["_Rectangle__width"]})')
-    
+        g = self.__dict__["_Rectangle__height"]
+        h = self.__dict__["_Rectangle__width"]
+        return (f'Rectangle({h}, {g})')
+
     def __del__(self):
         """A destructor the python way"""
         print("Bye rectangle...")
-        number_of_instances -= 1
+        Rectangle.number_of_instances -= 1
+
+
