@@ -6,6 +6,6 @@ The Rectangle module
 
 class Rectangle:
     """
-    A class defining the rectangle 
+    A class defining the rectangle
     """
     pass
