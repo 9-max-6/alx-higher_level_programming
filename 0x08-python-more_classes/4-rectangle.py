@@ -6,7 +6,7 @@ The Rectangle module
 
 class Rectangle:
     """
-    A class defining the rectangle
+    A class defining the rectangle documentationnnnn
     """
     def __init__(self, width=0, height=0):
         self.width = width
