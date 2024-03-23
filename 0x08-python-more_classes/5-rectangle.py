@@ -6,7 +6,7 @@ The Rectangle module
 
 class Rectangle:
     """
-    A class defining the rectangle 
+    A class defining the rectangle
     """
     def __init__(self, width=0, height=0):
         self.width = width
@@ -64,13 +64,13 @@ class Rectangle:
                 if i != self.__height - 1:
                     rect.append("\n")
         return ("".join(rect))
-    
+
     def __repr__(self):
         """canononical rep of the rectangle object"""
         g = self.__dict__["_Rectangle__height"]
         h = self.__dict__["_Rectangle__width"]
         return (f'Rectangle({g}, {h})')
-    
+
     def __del__(self):
         """A destructor the python way"""
         print("Bye rectangle...")
