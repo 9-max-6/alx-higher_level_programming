@@ -117,5 +117,5 @@ class Rectangle:
         that returns a new Rectangle instance with
         width == height == size
         """
-        cls.height = cls.width = size
-        return cls
+        height = width = size
+        return cls(width, height)
