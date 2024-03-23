@@ -118,3 +118,4 @@ class Rectangle:
         width == height == size
         """
         cls.height = cls.width = size
+        return cls
