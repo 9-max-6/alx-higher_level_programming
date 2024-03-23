@@ -69,4 +69,4 @@ class Rectangle:
         """canononical rep of the rectangle object"""
         g = self.__dict__["_Rectangle__height"]
         h = self.__dict__["_Rectangle__width"]
-        return (f'Rectangle({g}, {h})')
+        return (f'Rectangle({h}, {g})')
