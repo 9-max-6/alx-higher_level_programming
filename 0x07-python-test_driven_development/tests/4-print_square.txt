@@ -44,3 +44,10 @@ When size is a float
 When size is zero
                 ::
                     >>> p_s(0)
+
+When argument is missing
+                ::
+                    >>> p_s()
+                    Traceback (most recent call last):
+                        ...
+                    TypeError: print_square() missing 1 required positional argument: 'size'
