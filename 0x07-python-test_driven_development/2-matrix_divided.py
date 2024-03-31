@@ -13,7 +13,8 @@ def matrix_divided(matrix, div):
         raise ZeroDivisionError("division by zero")
     if type(div) is not int and type(div) is not float:
         raise TypeError("div must be a number")
-
+    if type(div) is float('inf'):
+        raise ValueError("div cannot be infinity")
     new_matrix = []
     len_list = []
 
