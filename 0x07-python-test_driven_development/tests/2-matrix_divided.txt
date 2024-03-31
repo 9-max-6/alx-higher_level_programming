@@ -38,3 +38,10 @@ Div not a number
         Traceback (most recent call last):
             ...
         TypeError: div must be a number
+
+Div is infinity
+    ::
+        >> matrix_divided([[1, 2, 3], [4, 5, 6]], float('inf'))
+        Traceback (most recent call last):
+            ...
+        ValueError: div connot be infinity
