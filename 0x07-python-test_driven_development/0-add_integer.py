@@ -15,6 +15,8 @@ def add_integer(a, b=98):
         raise TypeError("b must be an integer")
     if a is float('inf') or b is float('inf'):
         raise OverflowError("cannot convert float infinity to integer")
+    if a is float('NaN') or b is float('NaN'):
+        raise ValueError("cannot convert float NaN to integer")
     if type(a) is types[0]:
         a = int(a)
     if type(b) is types[0]:
