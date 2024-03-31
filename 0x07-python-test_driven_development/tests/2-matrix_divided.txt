@@ -1,0 +1,40 @@
+===
+Test cases for the matrix dividing function
+====
+
+Importing the right function
+    ::
+        >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Normal matrix
+    ::
+        >>> matrix_divided([[1, 2, 3], [4, 5, 6]], 3)
+        [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+Uneven matrix:
+    ::
+        >>> matrix_divided([[1, 2], [4, 5, 6]], 3)
+        Traceback (most recent call last):
+            ...
+        TypeError: Each row of the matrix must have the same size
+
+Matrix with none integer number:
+    ::
+        >>> matrix_divided([[1, 2, 3], ["string", 5, 6]], 3)
+        Traceback (most recent call last):
+            ...
+        TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Division with zero
+    ::
+        >>> matrix_divided([[1, 2, 3], [4, 5, 6]], 0)
+        Traceback (most recent call last):
+            ...
+        ZeroDivisionError: division by zero
+
+Div not a number
+    ::
+        >>> matrix_divided([[1, 2, 3], [4, 5, 6]], "string")
+        Traceback (most recent call last):
+            ...
+        TypeError: div must be a number
