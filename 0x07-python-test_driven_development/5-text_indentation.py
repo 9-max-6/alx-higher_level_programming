@@ -27,4 +27,4 @@ def text_indentation(text):
         new_line = False
         if item in spec:
             print("\n\n", end="")
-            new_line = False
+            new_line = True

@@ -2,3 +2,28 @@ Test cases
 ========================
 
 Importing the right module
+
+                ::
+                    >>> txt = __import__('5-text_indentation').text_indentation
+
+Testing with the text being right.
+                ::
+                    >>> txt("Maxwell Mutuku. How are you?")
+                    Maxwell Mutuku.
+                    <BLANKLINE>
+                    How are you?
+                    <BLANKLINE>
+            
+Testing with an integer.
+                ::
+                    >>> txt(1)
+                    Traceback (most recent call last):
+                        ...
+                    TypeError: text must be a string
+
+Testing with no arguments.
+                ::
+                    >>> txt()
+                    Traceback (most recent call last):
+                        ...
+                    TypeError: text_indentation() missing 1 required positional argument: 'text'
