@@ -28,4 +28,4 @@ second_name is not a string
             >>> say_my_name("Maxwell", 1)
             Traceback (most recent call last):
                 ....
-            TypeError: second_name must be a string
+            TypeError: last_name must be a string
