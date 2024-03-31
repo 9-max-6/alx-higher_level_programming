@@ -1,0 +1,46 @@
+Test cases for the print_square function
+
+==========================================
+
+Import the function
+                ::
+                    >>> p_s = __import__('4-print_square').print_square
+
+When size meets all requirements.
+
+                ::
+                    >>> p_s(2)
+                    ##
+                    ##
+            
+When size is not an integer.
+                ::
+                    >>> p_s("strin")
+                    Traceback (most recent call last):
+                        ....
+                    TypeError: size must be an integer
+
+When size < 0
+                ::
+                    >>> p_s(-1)
+                    Traceback (most recent call last):
+                        ...
+                    ValueError: size must be >= 0
+
+When size is float and is less than 0
+                ::
+                    >>> p_s(-4.5)
+                    Traceback (most recent call last):
+                        ...
+                    TypeError: size must be an integer
+
+When size is a float
+                ::
+                    >>> p_s(4.5)
+                    Traceback (most recent call last):
+                        ...
+                    TypeError: size must be an integer
+
+When size is zero
+                ::
+                    >>> p_s(0)
