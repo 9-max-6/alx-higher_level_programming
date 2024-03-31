@@ -25,23 +25,23 @@ Matrix with none integer number:
             ...
         TypeError: matrix must be a matrix (list of lists) of integers/floats
 
-Division with zero
+Division with zero:
     ::
         >>> matrix_divided([[1, 2, 3], [4, 5, 6]], 0)
         Traceback (most recent call last):
             ...
         ZeroDivisionError: division by zero
 
-Div not a number
+Div not a number:
     ::
         >>> matrix_divided([[1, 2, 3], [4, 5, 6]], "string")
         Traceback (most recent call last):
             ...
         TypeError: div must be a number
 
-Div is infinity
+Div is infinity:
     ::
-        >> matrix_divided([[1, 2, 3], [4, 5, 6]], float('inf'))
+        >>> matrix_divided([[1, 2, 3], [4, 5, 6]], float('inf'))
         Traceback (most recent call last):
             ...
-        ValueError: div connot be infinity
+        ValueError: div cannot be infinity
