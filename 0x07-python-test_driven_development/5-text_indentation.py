@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-module: text_indentation 
+module: text_indentation
 """
 
 
@@ -19,7 +19,12 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
     spec = ".?:"
+    new_line = True
     for item in text:
-        print("{}".format(item), end="")
+        if item == " " and new_line:
+            continue
+        print(item, end="")
+        new_line = False
         if item in spec:
-            print("\n")
+            print("\n\n", end="")
+            new_line = False
