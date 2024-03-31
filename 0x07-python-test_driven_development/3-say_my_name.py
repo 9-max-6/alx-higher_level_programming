@@ -1,0 +1,20 @@
+#!/usr/bin/python3
+"""
+Module: say_my_name
+"""
+
+
+def say_my_name(first_name, last_name=""):
+    """
+    A function to safe print
+    My name is <first name> <last name>
+    """
+    if not isinstance(first_name, str):
+        raise TypeError("first_name must be a string")
+    if not isinstance(last_name, str):
+        raise TypeError("second_name must be a string")
+    if len(last_name) > 0:
+        print("My name is {} {}".format(first_name, last_name))
+    else:
+        print("My name is {}".format(first_name))
+    

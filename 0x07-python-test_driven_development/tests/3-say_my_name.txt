@@ -1,0 +1,31 @@
+Test cases for the function say_my_name
+
+========================================
+
+Importing the function:
+        ::
+            >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+first_name and second_name is string:
+        ::
+            >>> say_my_name("Maxwell", "Mutuku")
+            My name is Maxwell Mutuku
+
+second_name missing:
+        ::
+            >>> say_my_name("Maxwell")
+            My name is Maxwell
+
+first_name is not a string
+        ::
+            >>> say_my_name(1, "Mutuku")
+            Traceback (most recent call last):
+                ....
+            TypeError: first_name must be a string
+
+second_name is not a string
+        ::
+            >>> say_my_name("Maxwell", 1)
+            Traceback (most recent call last):
+                ....
+            TypeError: second_name must be a string
