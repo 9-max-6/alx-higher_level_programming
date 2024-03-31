@@ -14,7 +14,7 @@ first_name and second_name is string:
 second_name missing:
         ::
             >>> say_my_name("Maxwell")
-            My name is Maxwell
+            My name is Maxwell 
 
 first_name is not a string
         ::
