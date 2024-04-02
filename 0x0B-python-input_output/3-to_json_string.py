@@ -12,4 +12,3 @@ def to_json_string(my_obj):
     x = json.dumps(my_obj)
 
     return x
-    
