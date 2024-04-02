@@ -4,6 +4,7 @@
 import unittest
 max_integer = __import__('6-max_integer').max_integer
 
+
 class TestMaxInteger(unittest.TestCase):
     """
     the testcase class
@@ -42,6 +43,17 @@ class TestMaxInteger(unittest.TestCase):
         """Test a list of ints and floats."""
         ints_and_floats = [1.53, 15.5, -9, 15, 6]
         self.assertEqual(max_integer(ints_and_floats), 15.5)
+
+    def test_only_neg(self):
+        """Test a list of only negative integers"""
+        only_neg = [-1, -4, -2, -9]
+        self.assertEqual(max_integer(only_neg), -1)
+
+    def test_one_neg(self):
+        """Test a list of one negative and the rest positive"""
+        one_neg = [-1, 5, 4, 8, 9, 0]
+        self.assertEqual(max_integer(one_neg), 9)
+
 
 if __name__ == '__main__':
     unittest.main()
