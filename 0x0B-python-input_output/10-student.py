@@ -22,7 +22,7 @@ class Student:
         self.age = age
 
     def to_json(self, attrs=None):
-        if type(attrs) is list and len(attrs) >= 0:
+        if len(attrs) >=0 and type(attrs) is list:
             new_dict = {}
             for item in attrs:
                 try:
