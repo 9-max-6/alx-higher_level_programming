@@ -33,5 +33,7 @@ class Student:
                 return new_dict
             else:
                 return self.__dict__
-        else:
+        elif len(attrs) == 0:
+            return {}
+        else: 
             return self.__dict__
