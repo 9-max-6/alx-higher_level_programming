@@ -22,18 +22,13 @@ class Student:
         self.age = age
 
     def to_json(self, attrs=None):
-        if type(attrs) is list and len(attrs) > 0:
+        if type(attrs) is list and len(attrs) >= 0:
             new_dict = {}
             for item in attrs:
                 try:
                     new_dict[item] = self.__dict__[item]
                 except KeyError:
                     pass
-            if len(new_dict) > 0:
-                return new_dict
-            else:
-                return self.__dict__
-        elif len(attrs) == 0:
-            return {}
-        else: 
+            return new_dict
+        else:
             return self.__dict__
