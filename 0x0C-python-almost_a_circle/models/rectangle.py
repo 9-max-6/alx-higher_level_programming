@@ -5,7 +5,7 @@ Module - class rectangle
 from models import base
 
 
-class Rectangle(Base):
+class Rectangle(base.Base):
     """
     Class rectangle that inherits from Base
     """
