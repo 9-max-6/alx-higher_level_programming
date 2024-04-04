@@ -33,7 +33,7 @@ class Square(rectangle.Rectangle):
             for key, value in kwargs.items():
                 if hasattr(self, key):
                     setattr(self, key, value)
-        attributes = [self.id, self.size, self.x, self.y]
+        attributes = ['id', 'size', 'x', 'y']
         for index, value in enumerate(args):
             if index < len(args):
                 setattr(self, attributes[index], value)
