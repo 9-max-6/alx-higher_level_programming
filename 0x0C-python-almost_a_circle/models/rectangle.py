@@ -99,11 +99,9 @@ class Rectangle(base.Base):
     def update(self, *args, **kwargs):
         """ function to update arguments"""
         if not args:
-            for key, value in kwargs:
-                try:
-                    self.__dict__[key] = value
-                except KeyError:
-                    pass
+            for key, value in kwargs.items():
+                if hasattr(self, key):
+                    setattr(self, key, value)
         for i in range(len(args)):
             if (i == 0):
                 self.id = args[0]
