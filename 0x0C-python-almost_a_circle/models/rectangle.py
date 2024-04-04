@@ -106,6 +106,6 @@ class Rectangle(base.Base):
             if (i == 2):
                 self.height = args[2]
             if (i == 3):
-                self.width = args[3]
+                self.x = args[3]
             if (i == 4):
-                self.width = args[4]
+                self.y = args[4]
