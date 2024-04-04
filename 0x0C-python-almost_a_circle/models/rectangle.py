@@ -98,7 +98,7 @@ class Rectangle(base.Base):
 
     def update(self, *args, **kwargs):
         """ function to update arguments"""
-        if not args:
+        if not args and kwargs:
             for key, value in kwargs.items():
                 if hasattr(self, key):
                     setattr(self, key, value)
@@ -109,4 +109,11 @@ class Rectangle(base.Base):
 
     def to_dictionary(self):
         """returns the dict rep of a rectangle"""
-        return self.__dict__
+        new_dict = {}
+        for key, value in self.__dict__.items():
+            if key.startswith("_Rectangle__"):
+                new_k = key.replace("_Rectangle__", "")
+                new_dict[new_k] = value
+            else:
+                new_dict[key] = value
+        return new_dict
