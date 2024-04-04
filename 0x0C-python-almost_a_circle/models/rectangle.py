@@ -101,7 +101,7 @@ class Rectangle(base.Base):
         if not args:
             for key, value in kwargs:
                 try:
-                    self.__dict__[key] == value
+                    self.__dict__[key] = value
                 except KeyError:
                     pass
         for i in range(len(args)):
