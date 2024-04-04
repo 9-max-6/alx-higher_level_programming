@@ -35,4 +35,5 @@ class Base:
                 f.write(cls.to_json_string(None))
             else:
                 for item in list_objs:
-                    f.write(cls.to_json_string(item.to_dictionary()))
+                    new_list.append(cls.to_json_string(item.to_dictionary()))
+                f.write(str(new_list))
