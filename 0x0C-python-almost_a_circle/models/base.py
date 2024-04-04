@@ -34,6 +34,7 @@ class Base:
         with open(file_name, 'w', encoding='utf-8') as f:
             if type(list_objs) is None:
                 f.write("[]")
+                return
             if list_objs == [] or len(list_objs) > 0:
                 if len(list_objs) == 0:
                     f.write(cls.to_json_string(None))
