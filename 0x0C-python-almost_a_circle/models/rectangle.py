@@ -102,7 +102,7 @@ class Rectangle(base.Base):
             for key, value in kwargs.items():
                 if hasattr(self, key):
                     setattr(self, key, value)
-        attributes = ['id', 'width', 'height', 'x', 'y']
+        attributes = ['id', 'size', 'x', 'y']
         for i, arg in enumerate(args):
             if i < len(attributes):
                 setattr(self, attributes[i], arg)
