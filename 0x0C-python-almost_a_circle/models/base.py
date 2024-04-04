@@ -59,3 +59,12 @@ class Base:
             new = cls(1)
         new.update(**dictionary)
         return new
+
+    def load_from_file(cls):
+        """returns a list of instances:"""
+        file_name = str(cls.__name__) + ".json"
+        try:
+            f = open(file_name, "r", encoding="utf-8")
+            return json.load(f)
+        except:
+            return []
