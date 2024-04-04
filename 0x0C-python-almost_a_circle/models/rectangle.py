@@ -90,4 +90,4 @@ class Rectangle(base.Base):
     def __str__(self):
         """print rectangle"""
         args = [self.id, self.x, self.y, self.width, self.height]
-        return "[Rectangle] ({})  {}/{} - {}/{}".format(*args)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(*args)
