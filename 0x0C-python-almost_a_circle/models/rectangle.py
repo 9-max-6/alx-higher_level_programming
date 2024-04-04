@@ -82,7 +82,11 @@ class Rectangle(base.Base):
         """
         prints out the rectange using #
         """
+        for i in range(self.y):
+            print("")
         for i in range(self.__height):
+            for i in range(self.x):
+                print(" ", end="")
             for j in range(self.__width):
                 print("#", end="")
             print("")
