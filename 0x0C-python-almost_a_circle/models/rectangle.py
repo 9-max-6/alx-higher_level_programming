@@ -97,6 +97,7 @@ class Rectangle(base.Base):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(*args)
 
     def update(self, *args):
+        """ function to update arguments"""
         for i in range(len(args)):
             if (i == 0):
                 self.id = args[0]
