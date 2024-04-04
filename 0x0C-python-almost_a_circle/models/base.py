@@ -32,7 +32,7 @@ class Base:
         file_name = str(cls.__name__) + ".json"
 
         with open(file_name, 'w', encoding='utf-8') as f:
-            if type(list_objs) is None:
+            if list_objs is None:
                 f.write("[]")
                 return
             if list_objs == [] or len(list_objs) > 0:
