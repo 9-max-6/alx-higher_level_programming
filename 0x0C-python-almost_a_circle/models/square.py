@@ -26,3 +26,10 @@ class Square(rectangle.Rectangle):
     def size(self, value):
         """Size setter"""
         self.width = value
+
+    def update(self, *args, **kwargs):
+        """method to update attributes"""
+        if not args:
+            for key, value in kwargs.items():
+                if hasattr(self, key):
+                    setattr(self, key, value)
