@@ -37,3 +37,14 @@ class Square(rectangle.Rectangle):
         for index, value in enumerate(args):
             if index < len(args):
                 setattr(self, attributes[index], value)
+
+    def to_dictionary(self):
+        """returns the dict rep of a rectangle"""
+        new_dict = {}
+        for key, value in self.__dict__.items():
+            if key.startswith("_Rectangle__"):
+                new_k = key.replace("_Rectangle__", "")
+                new_dict[new_k] = value
+            else:
+                new_dict[key] = value
+        return new_dict
