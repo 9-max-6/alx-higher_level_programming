@@ -106,3 +106,7 @@ class Rectangle(base.Base):
         for i, arg in enumerate(args):
             if i < len(attributes):
                 setattr(self, attributes[i], arg)
+
+    def to_dictionary(self):
+        """returns the dict rep of a rectangle"""
+        return self.__dict__
