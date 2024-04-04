@@ -42,9 +42,12 @@ class Square(rectangle.Rectangle):
         """returns the dict rep of a rectangle"""
         new_dict = {}
         for key, value in self.__dict__.items():
-            if key.startswith("_Square__"):
-                new_k = key.replace("_Square__", "")
+            if key.startswith("_Rectangle__"):
+                new_k = key.replace("_Rectangle__", "")
+                if new_k == "height":
+                    new_k = "size"
                 new_dict[new_k] = value
             else:
                 new_dict[key] = value
+        del new_dict["width"]
         return new_dict
