@@ -96,8 +96,14 @@ class Rectangle(base.Base):
         args = [self.id, self.x, self.y, self.width, self.height]
         return "[Rectangle] ({}) {}/{} - {}/{}".format(*args)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ function to update arguments"""
+        if not args:
+            for key, value in kwargs:
+                try:
+                    self.__dict__[key] == value
+                except KeyError:
+                    pass
         for i in range(len(args)):
             if (i == 0):
                 self.id = args[0]
