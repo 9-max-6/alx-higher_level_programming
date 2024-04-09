@@ -2,8 +2,8 @@
 
 const { argv } = require('node:process');
 
-let biggestArgument = -Infinity;
-let secondBiggestArg = -Infinity;
+let biggestArgument = 0;
+let secondBiggestArg = 0;
 
 if (argv.length > 2) {
   argv.slice(2).forEach(element => {
