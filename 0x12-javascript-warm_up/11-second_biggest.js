@@ -1,14 +1,20 @@
 #!/usr/bin/node
 
 const { argv } = require('node:process');
-let biggestArgument = 0;
+
+let biggestArgument = -Infinity;
+let secondBiggestArg = -Infinity;
+
 if (argv.length > 2) {
-  argv.forEach((element, index) => {
-    if (index !== 1 || index !== 2) {
-      if (element > biggestArgument) {
-        biggestArgument = element;
-      }
+  argv.slice(2).forEach(element => {
+    const num = Number(element);
+    if (num > biggestArgument) {
+      secondBiggestArg = biggestArgument;
+      biggestArgument = num;
+    } else if (num > secondBiggestArg && num < biggestArgument) {
+      secondBiggestArg = num;
     }
   });
 }
-console.log(`${biggestArgument}`);
+
+console.log(`${secondBiggestArg}`);
