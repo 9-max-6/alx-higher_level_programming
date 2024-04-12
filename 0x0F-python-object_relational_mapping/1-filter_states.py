@@ -10,7 +10,6 @@ if __name__ == '__main__':
         username = sys.argv[1]
         password = sys.argv[2]
         database = sys.argv[3]
-        state_name = sys.argv[4]
     except IndexError:
         sys.exit(1)
 
@@ -24,8 +23,8 @@ if __name__ == '__main__':
     try:
         db = MySQLdb.connect(**DB_CONFIG)
         cursor = db.cursor()
-        query = "SELECT * FROM states WHERE name = %s;"
-        cursor.execute(query, (state_name, ))
+        query = "SELECT * FROM states WHERE name LIKE 'N%'  ORDER BY id ASC;"
+        cursor.execute(query)
 
         result = cursor.fetchall()
         for item in result:
