@@ -24,8 +24,8 @@ if __name__ == '__main__':
     try:
         db = MySQLdb.connect(**DB_CONFIG)
         cursor = db.cursor()
-        query = "SELECT * FROM states WHERE name = {};".format(state_name)
-        cursor.execute(query)
+        query = "SELECT * FROM states WHERE name = %s;"
+        cursor.execute(query, (state_name, ))
 
         result = cursor.fetchall()
         for item in result:
