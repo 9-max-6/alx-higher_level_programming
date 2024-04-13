@@ -13,8 +13,8 @@ if __name__ == '__main__':
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    my_tuple = (State.name, City.id, City.name)
-    for instance in session.query(my_tuple).filter(State.id == City.state_id):
+    for instance in (session.query(State.name, City.id, City.name)
+                    .filter(State.id == City.state_id)):
         print(instance[0] + ": (" + str(instance[1]) + ") " + instance[2])
 
     session.close()
