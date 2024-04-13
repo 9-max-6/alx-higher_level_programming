@@ -16,8 +16,8 @@ if __name__ == "__main__":
     if len(sys.argv) == 5:
         state_name = sys.argv[4]
     instances = []
-    instances = [instance[0] for instance in session.query(State.id, State.name)
-                .filter(State.name == state_name)]
+    instances = [instance[0] for instance in session
+                 .query(State.id, State.name).filter(State.name == state_name)]
     if len(instances) > 0:
         for instance in instances:
             print(instance)
