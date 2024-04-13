@@ -12,7 +12,7 @@ if __name__ == '__main__':
         database = sys.argv[3]
         state_name = sys.argv[4]
     except IndexError:
-        sys.exit(1)
+        sys.exit(0)
 
     DB_CONFIG = {
         "user": f"{username}",
