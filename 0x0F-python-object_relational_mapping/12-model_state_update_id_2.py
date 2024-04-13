@@ -13,8 +13,11 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    instance = session.query(State).filter(State.id == '2').first()
-    instance.name = 'New Mexico'
-    session.commit()
+    instances = [instance for instance in session.
+                 query(State).filter(State.name.ilike('%a%')).all()]
+    for instance in instances:
+        if instance:
+            session.delete(instance)
+            session.commit()
 
     session.close()
