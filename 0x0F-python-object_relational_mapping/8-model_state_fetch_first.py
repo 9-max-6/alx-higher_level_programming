@@ -16,4 +16,4 @@ if __name__ == "__main__":
     if instance:
         print(instance.id, instance.name, sep=": ")
     else:
-        print("")
+        print("Nothing")
