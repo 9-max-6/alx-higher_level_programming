@@ -18,6 +18,6 @@ if __name__ == "__main__":
     for instance in instances:
         if instance:
             session.delete(instance)
-            session.commit()
+    session.commit()
 
     session.close()
