@@ -15,5 +15,5 @@ if __name__ == "__main__":
 
     instance = session.query(State).filter(State.id == '2').first()
     instance.name = 'New Mexico'
-    session.commit
+    session.commit()
     session.close()
