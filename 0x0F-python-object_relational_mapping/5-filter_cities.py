@@ -32,8 +32,11 @@ if __name__ == '__main__':
         cursor.execute(query, (state_name, ))
 
         results = cursor.fetchall()
-        for result in results:
-            print(result[0], end=" ")
+        for i in range(len(results)):
+            if i != len(results) - 1:
+                print(results[i][0], end=" ")
+            else:
+                print(results[i][0], end="")
         print("")
 
     except MySQLdb.Error as e:
