@@ -2,7 +2,7 @@
 """prints all City objects"""
 from relationship_city import City
 from relationship_state import State, Base
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, joinedload
 from sqlalchemy import create_engine
 import sys
 
@@ -14,9 +14,9 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    states = session.query(State).order_by(State.id).all()
-    for state in states:
-        print(f"{state.id}: {state.name}")
-        for city in state.cities:
-            print(f"    {city.id} : {city.name}")
+    for instance in session.query(State).order_by(State.id):
+        print(instance.id, instance.name, sep=": ")
+        for city_ins in instance.cities:
+            print("    ", end="")
+            print(city_ins.id, city_ins.name, sep=": ")
     session.close()
