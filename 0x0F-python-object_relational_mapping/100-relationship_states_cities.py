@@ -18,6 +18,7 @@ if __name__ == '__main__':
     newCity = City(name='San Francisco')
 
     session.add(newState, children=newCity)
+    session.add(newCity)
     session.commit()
 
     session.close()
