@@ -13,3 +13,5 @@ class City(Base):
     id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
     name = Column(String(128))
     state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
+    state = relationship("State", backref='city')
+    
