@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """prints all City objects"""
-from model_city import City
-from model_state import State, Base
+from relationship_city import City
+from relationship_state import State, Base
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 import sys
@@ -13,8 +13,11 @@ if __name__ == '__main__':
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    for instance in (session.query(State.name, City.id, City.name)
-                     .filter(State.id == City.state_id)):
-        print(instance[0] + ": (" + str(instance[1]) + ") " + instance[2])
 
+    newState = State(name='California')
+    newCity = City(name='San Francisco')
+    newState.cities.append(newCity)
+    session.add(newState)
+    session.add(newCity)
+    session.commit()
     session.close()
