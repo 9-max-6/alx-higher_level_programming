@@ -16,4 +16,4 @@ class City(Base):
     state = relationship(
         'State',
         back_populates='cities',
-        cascade='all, delete-orphan')
+    )
