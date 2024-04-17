@@ -5,6 +5,7 @@ from sqlalchemy import Integer, Column, String, ForeignKey
 from relationship_state import Base
 from sqlalchemy.orm import relationship
 
+
 class City(Base):
     """
     inherits from Base (imported from model_state)
@@ -12,7 +13,9 @@ class City(Base):
     __tablename__ = 'cities'
     id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
     name = Column(String(128))
-    state_id = Column(Integer, ForeignKey('states.id', ondelete='CASCADE'), nullable=False)
+    state_id = Column(
+        Integer, ForeignKey('states.id', ondelete='CASCADE'), nullable=False
+        )
     state = relationship(
         'State',
         back_populates='cities',
