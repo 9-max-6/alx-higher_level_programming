@@ -20,4 +20,4 @@ if __name__ == "__main__":
         req = urllib.request.Request(url, data)
         with urllib.request.urlopen(req) as resp:
             content_body = resp.read()
-            print(content_body)
+            print(content_body.decode('ascii'))
