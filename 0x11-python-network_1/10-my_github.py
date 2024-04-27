@@ -16,5 +16,5 @@ if __name__ == "__main__":
             with requests.get(url, auth=(username, password)) as resp:
                 resp.raise_for_status()
                 print(resp.json().get("id", None))
-        except requests.exceptions.Exception as err:
+        except requests.exceptions.RequestException as err:
             pass
