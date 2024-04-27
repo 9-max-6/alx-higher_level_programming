@@ -11,7 +11,7 @@ if __name__ == "__main__":
         username = argv[1]
         password = argv[2]
 
-        url = "https://github.com/login"
+        url = "https://api.github.com/user"
         try:
             with requests.get(url, auth=(username, password)) as resp:
                 resp.raise_for_status()
