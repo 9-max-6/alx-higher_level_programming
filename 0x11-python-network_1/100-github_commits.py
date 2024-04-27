@@ -23,4 +23,4 @@ if __name__ == '__main__':
                 if marker == 10:
                     break
                 else:
-                    marker+=1
+                    marker += 1
