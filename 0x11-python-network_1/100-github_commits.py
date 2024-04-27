@@ -8,8 +8,8 @@ import requests
 
 if __name__ == '__main__':
     if len(argv) > 2:
-        user_name = argv[1]
-        repo_name = argv[2]
+        user_name = argv[2]
+        repo_name = argv[1]
 
         url = f"https://api.github.com/repos/{user_name}/{repo_name}/commits"
         headers = {"Accept": "application/vnd.github.v3+json"}
