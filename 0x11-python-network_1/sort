@@ -1,0 +1,8 @@
+#!/usr/bin/python3
+
+def sort_dated_list(my_list=[]):
+    """list[(date, sha)]"""
+    2024-04-23T21:49Z
+    2024-05-23T21:45Z
+
+    
