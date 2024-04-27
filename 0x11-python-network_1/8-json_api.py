@@ -23,5 +23,5 @@ if __name__ == "__main__":
                     print(f"[{req_id}] {name}")
                 else:
                     print("No result")
-        except requests.exceptions.Exception as err:
+        except requests.exceptions.RequestException as err:
             print("Not a valid JSON")
