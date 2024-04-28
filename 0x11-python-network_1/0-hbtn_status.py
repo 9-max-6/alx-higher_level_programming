@@ -8,10 +8,7 @@ if __name__ == "__main__":
     with urllib.request.urlopen(url) as resp:
         content_body = resp.read()
         type_resp = type(content_body)
-        if "utf-8" in str(resp.getheaders("Content-type")):
-            charset = "OK"
-        else:
-            charset = ""
+        charset = content_body.decode('utf-8')
         formatted_output = f"Body response:\n\
             - type: {type_resp}\n\
             - content: {content_body}\n\
