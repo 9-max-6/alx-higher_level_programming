@@ -22,7 +22,7 @@ if __name__ == "__main__":
             if resp.headers.get("Content-Type") != "application/json":
                 print("Not a valid JSON")
             else:
-                if len(resp.json() < 1):
+                if len(resp.json()) < 1:
                     print("No result")
                 else:
                     print(f"[{req_id}] {name}")
