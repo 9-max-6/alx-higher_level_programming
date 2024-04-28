@@ -12,9 +12,8 @@ if __name__ == "__main__":
         password = argv[2]
 
         url = "https://api.github.com/user"
-        try:
-            with requests.get(url, auth=(username, password)) as resp:
-                resp.raise_for_status()
+        with requests.get(url, auth=(username, password)) as resp:
+            if (resp.status_code == 401):
+                print("None")
+            else:
                 print(resp.json().get("id", None))
-        except requests.exceptions.RequestException as err:
-            pass
