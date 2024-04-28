@@ -19,7 +19,7 @@ if __name__ == "__main__":
             req_id = resp.json().get("id", None)
             name = resp.json().get("name", None)
 
-            if resp.headers.get("Content Type") != "application/json":
+            if resp.headers.get("Content-Type") != "application/json":
                 print("Not a valid JSON")
             else:
                 if name and req_id:
