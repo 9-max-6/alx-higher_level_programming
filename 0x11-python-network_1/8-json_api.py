@@ -13,7 +13,7 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         q = sys.argv[1]
     else:
-        q =""
+        q = ""
     pay_load = {"q": q}
     with requests.post(url, data=pay_load) as resp:
         resp.raise_for_status()
