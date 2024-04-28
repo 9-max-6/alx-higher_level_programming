@@ -17,7 +17,7 @@ if __name__ == '__main__':
         with requests.get(url, headers=headers) as resp:
             marker = 1
             for item in resp.json():
-                name = item.get("commit")["committer"]["name"]
+                name = item.get("commit").get("author").get("name")
                 sha = item.get("sha")
                 print(f"{sha}: {name}")
                 if marker == 10:
