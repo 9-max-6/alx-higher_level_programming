@@ -12,17 +12,18 @@ if __name__ == "__main__":
     url = "http://0.0.0.0:5000/search_user"
     if len(sys.argv) > 1:
         q = sys.argv[1]
+    else:
+        q =""
+    pay_load = {"q": q}
+    with requests.post(url, data=pay_load) as resp:
+        resp.raise_for_status()
+        req_id = resp.json().get("id", None)
+        name = resp.json().get("name", None)
 
-        pay_load = {"q": q}
-        with requests.post(url, data=pay_load) as resp:
-            resp.raise_for_status()
-            req_id = resp.json().get("id", None)
-            name = resp.json().get("name", None)
-
-            if resp.headers.get("Content-Type") != "application/json":
-                print("Not a valid JSON")
+        if resp.headers.get("Content-Type") != "application/json":
+            print("Not a valid JSON")
+        else:
+            if not resp.json():
+                print("No result")
             else:
-                if not resp.json():
-                    print("No result")
-                else:
-                    print(f"[{req_id}] {name}")
+                print(f"[{req_id}] {name}")
