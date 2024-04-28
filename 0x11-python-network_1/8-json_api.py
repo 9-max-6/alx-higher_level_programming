@@ -14,14 +14,15 @@ if __name__ == "__main__":
         q = sys.argv[1]
 
         pay_load = {"q": q}
-        try:
-            with requests.post(url, data=pay_load) as resp:
-                resp.raise_for_status()
-                req_id = resp.json().get("id", None)
-                name = resp.json().get("name", None)
+        with requests.post(url, data=pay_load) as resp:
+            resp.raise_for_status()
+            req_id = resp.json().get("id", None)
+            name = resp.json().get("name", None)
+
+            if resp.headers.get("Content Type") != "application/json":
+                print("Not a valid JSON")
+            else:
                 if name and req_id:
                     print(f"[{req_id}] {name}")
                 else:
                     print("No result")
-        except requests.exceptions.RequestException as err:
-            print("Not a valid JSON")
