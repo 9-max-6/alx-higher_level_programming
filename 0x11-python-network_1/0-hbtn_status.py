@@ -9,8 +9,7 @@ if __name__ == "__main__":
         content_body = resp.read()
         type_resp = type(content_body)
         charset = content_body.decode('utf-8')
-        formatted_output = f"Body response:\n\
-            - type: {type_resp}\n\
-            - content: {content_body}\n\
-            - utf8 content: {charset}"
-    print(formatted_output)
+        print("Body response:")
+        print(f"\t- type: {type_resp}")
+        print(f"\t- content: {content_body}")
+        print(f"\t- utf8 content: {charset}")
