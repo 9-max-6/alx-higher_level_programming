@@ -10,11 +10,6 @@ try {
 } catch (e) {
   exit(1);
 }
-request(url, function (error, response, body) {
-  if (error) {
-    console.log(error);
-  }
-  if (response) {
-    console.log('code: ', response && response.statusCode);
-  }
+request.get(url).on('response', function (response) {
+  console.log('code: ', response.statusCode);
 });
