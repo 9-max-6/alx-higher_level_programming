@@ -5,15 +5,16 @@ const request = require('request');
 let url;
 
 try {
-	const args = process.argv.slice(2);
-	url = args[0];
+  const args = process.argv.slice(2);
+  url = args[0];
 } catch (e) {
-	exit(1);
+  exit(1);
 }
 request(url, function (error, response, body) {
-	if (error) {
-		console.log(error);
-	} else {
-		console.log('code: ', response && response.statusCode);
-	}
+  if (error) {
+    console.log(error);
+  }
+  if (response) {
+    console.log('code: ', response && response.statusCode);
+  }
 });
