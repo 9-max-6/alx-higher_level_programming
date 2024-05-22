@@ -1,18 +1,19 @@
 #!/usr/bin/node
 
+const { exit } = require('process');
 const request = require('request');
 let url;
 
 try {
-  const args = process.argv.slice(2);
-  url = args[0];
+	const args = process.argv.slice(2);
+	url = args[0];
 } catch (e) {
-  console.log(e);
+	exit(1);
 }
 request(url, function (error, response, body) {
-  if (error) {
-    console.log(error);
-  } else {
-    console.log('code: ', response && response.statusCode);
-  }
+	if (error) {
+		console.log(error);
+	} else {
+		console.log('code: ', response && response.statusCode);
+	}
 });
