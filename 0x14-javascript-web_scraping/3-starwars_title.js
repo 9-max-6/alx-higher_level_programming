@@ -1,20 +1,21 @@
 #!/usr/bin/node
 
-const fs = require('fs');
 const { exit } = require('process');
-
-let filename;
+const request = require('request');
+let movieId;
+const url = 'https://swapi-api.alx-tools.com/api/films/';
 try {
   const args = process.argv.slice(2);
-  filename = args[0];
+  movieId = args[0];
 } catch (e) {
   exit(1);
 }
+const fullUrl = url + movieId;
 
-fs.readFile(filename, 'utf-8', (err, fd) => {
+request(fullUrl, function (err, response, body) {
   if (err) {
     console.log(err);
+  } else {
+    console.log(JSON.parse(body).title);
   }
-  console.log(fd);
 });
-
